@@ -1,4 +1,4 @@
-name: CI
+name: Release package
 on: [push]
 jobs:
   build:
@@ -8,4 +8,12 @@ jobs:
     - name: release package
       run: |
         echo Relase package.
-        make
+        echo Install gopkg.
+        go get -u github.com/jiusanzhou/gopkg
+        echo Generate files.
+        gopkg gen -o . -d
+        echo Publish to github
+        git add -f --ignore-errors --all
+        git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
+        ls -al
+        # git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID $TARGET_BRANCH
