@@ -9,6 +9,9 @@ packages:
   type: git
   schema: https
   path: github.com/jiusanzhou/gopkg
+  sub:
+  - name: cmd
+  - name: gopkg
 - name: x
   path: github.com/jiusanzhou/x
   sub:
