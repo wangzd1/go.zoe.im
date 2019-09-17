@@ -15,4 +15,6 @@ packages:
 - name: x
   path: github.com/jiusanzhou/x
   sub:
+  - name: sh
   - name: cli
+  - name: httputil
