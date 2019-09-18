@@ -11,4 +11,5 @@ packages:
   sub:
   - name: sh
   - name: cli
+  - name: cli/opts
   - name: httputil
