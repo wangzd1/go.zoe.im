@@ -9,7 +9,7 @@ jobs:
       run: |
         echo Relase package.
         echo Install gopkg.
-        go get -u github.com/jiusanzhou/gopkg
+        go get -u go.zoe.im/gopkg
         echo Generate files.
         gopkg gen -o . -d
         echo Publish to github
