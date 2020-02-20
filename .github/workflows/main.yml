@@ -14,9 +14,9 @@ jobs:
         echo $GOPATH
         whereis gopkg
       env:
-        GOPATH: $HOME/go
+        GOPATH: /tmp/go
     - name: generate static conten
-      run: $HOME/go/bin/gopkg gen -o . -d
+      run: /tmp/go/bin/gopkg gen -o . -d
     - name: public content to github
       run: |
         echo Publish to github
