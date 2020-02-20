@@ -1,5 +1,8 @@
 name: Release package
-on: [push]
+on:
+- push:
+    branches:
+    - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,11 +18,12 @@ jobs:
         whereis gopkg
       env:
         GOPATH: /tmp/go
-    - name: generate static conten
+    - name: generate static content
       run: /tmp/go/bin/gopkg gen -o . -d
     - name: public content to github
       run: |
         echo Publish to github
+        git checkout master
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
         git push -f -q https://github.com/jiusanzhou/go.zoe.im master
