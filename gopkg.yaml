@@ -13,3 +13,5 @@ packages:
   - name: cli
   - name: cli/opts
   - name: httputil
+- name: surferua
+  path: github.com/jiusanzhou/surferua
