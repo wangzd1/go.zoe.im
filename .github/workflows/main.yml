@@ -22,5 +22,4 @@ jobs:
         echo Publish to github
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
-        ls -al
-        git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID $TARGET_BRANCH
+        git push -f -q https://github.com/jiusanzhou/go.zoe.im master
