@@ -5,13 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-go@v2-beta
+      with:
+        go-version: '^1.13'
     - name: install dependences
       run: |
         go get -u go.zoe.im/gopkg
         echo $GOPATH
         whereis gopkg
+      env:
+        GOPATH: $HOME/go
     - name: generate static conten
-      run: gopkg gen -o . -d
+      run: $HOME/go/bin/gopkg gen -o . -d
     - name: public content to github
       run: |
         echo Publish to github
