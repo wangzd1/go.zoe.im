@@ -11,7 +11,7 @@ jobs:
         echo Install gopkg.
         go get -u go.zoe.im/gopkg
         echo Generate files.
-        gopkg gen -o . -d
+        $GOPATH/bin/gopkg gen -o . -d
         echo Publish to github
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
