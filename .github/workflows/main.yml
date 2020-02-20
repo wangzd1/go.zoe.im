@@ -5,15 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: release package
+    - name: install dependences
       run: |
-        echo Relase package.
-        echo Install gopkg.
         go get -u go.zoe.im/gopkg
-        echo Generate files.
-        $GOPATH/bin/gopkg gen -o . -d
+        echo $GOPATH
+        whereis gopkg
+    - name: generate static conten
+      run: gopkg gen -o . -d
+    - name: public content to github
+      run: |
         echo Publish to github
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
         ls -al
-        # git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID $TARGET_BRANCH
+        git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID $TARGET_BRANCH
