@@ -26,4 +26,4 @@ jobs:
         git checkout master
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release pacakge"
-        git push -f -q https://github.com/jiusanzhou/go.zoe.im master
+        git push -f -q https://github.com/jiusanzhou/go.zoe.im gh-pages
