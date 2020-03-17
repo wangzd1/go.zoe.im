@@ -15,3 +15,8 @@ packages:
   - name: httputil
 - name: surferua
   path: github.com/jiusanzhou/surferua
+- name: injgo
+  path: github.com/jiusanzhou/injgo
+  sub:
+  - name: cmd/injgo
+  - name: pkg/w32
