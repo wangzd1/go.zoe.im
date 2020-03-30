@@ -20,6 +20,6 @@ packages:
   sub:
   - name: cmd/injgo
   - name: pkg/w32
- - name: unipaw
-   path: github.com/jiusanzhou/unipaw
+- name: unipaw
+  path: github.com/jiusanzhou/unipaw
  
